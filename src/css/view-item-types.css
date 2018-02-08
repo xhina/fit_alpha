@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("../res/font/Open-Sans/OpenSans-Regular.ttf"); }
+@font-face {
+  font-family: 'Open-Sans-Bold';
+  src: url("../res/font/Open-Sans/OpenSans-Bold.ttf"); }
+@font-face {
+  font-family: 'Open-Sans-Semibold';
+  src: url("../res/font/Open-Sans/OpenSans-Semibold.ttf"); }
+@font-face {
+  font-family: 'Open-Sans-Light';
+  src: url("../res/font/Open-Sans/OpenSans-Light.ttf"); }
+#item-types .pre-scrollable {
+  width: 100vw;
+  overflow-x: auto; }
+#item-types #top-image {
+  width: 100vw;
+  height: 180px;
+  background-size: contain; }
+#item-types header img {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  display: inline-block;
+  right: 15px; }
+#item-types header p {
+  position: relative;
+  font-family: Open-Sans-Bold;
+  font-size: 10pt;
+  text-align: center;
+  letter-spacing: 1pt;
+  width: 100%;
+  float: left;
+  margin: 3px 0 0 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eeeeee; }
+#item-types nav ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  justify-content: flow-start;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee; }
+#item-types .nav-menu {
+  width: 100%; }
+  #item-types .nav-menu li {
+    padding: 10px 20px;
+    font-family: Open-Sans-Semibold;
+    font-size: 9pt; }
+  #item-types .nav-menu div {
+    background-color: black;
+    height: 2px; }
+#item-types #item-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  width: 100%; }
+#item-types .item {
+  padding: 0 11px; }
+  #item-types .item #item-thumbnail {
+    background-color: #eeeeee;
+    width: 165px;
+    height: 200px; }
+  #item-types .item p:nth-child(1) {
+    font-family: Open-Sans-Bold;
+    font-size: 9pt;
+    letter-spacing: 1pt;
+    text-align: center;
+    margin: 10px 0 0 0; }
+  #item-types .item p:nth-child(2) {
+    font-family: Open-Sans-Light;
+    font-size: 8pt;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 1px 0 0 0; }
+  #item-types .item div {
+    text-align: center;
+    margin-top: -4px; }
+    #item-types .item div img {
+      content: url("../res/img/icoMoney@2x.png");
+      width: 12px;
+      height: 12px; }
+    #item-types .item div p {
+      display: inline-block;
+      padding: 0 2px; }
+
+/*# sourceMappingURL=view-item-types.css.map */

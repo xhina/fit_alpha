@@ -1,0 +1,162 @@
+@import 'global_mixin';
+
+
+body {
+  font-family:$font-family;
+  font-weight:lighter;
+  overflow:hidden;
+  background-color:white;
+}
+
+p {
+  white-space: pre-line;
+}
+
+a {
+  cursor:pointer;
+}
+
+.page-container {
+  position:absolute;
+  width:100%;
+  height:100vh;
+  background-color:$color-page-bg;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index:100;
+}
+
+.page {
+  .container {
+    margin-top:23px;
+    max-width:550px;
+
+    @media (max-width:$width-ip5) {
+      width:100vw;
+      padding:0;
+    }
+  }
+
+  .pre-scrollable {
+    max-height:96vh;
+    background-color:$color-page-bg;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .menu_separator {
+    background-color:rgb(214, 199, 193);
+    width:2px;
+    height:20px;
+    margin:0 3px;
+  }
+
+  .button_lock {
+    background-color:white !important;
+    border:1px solid $color-warm-grey !important;
+    color:$color-warm-grey !important;
+  }
+
+}
+
+#indicator {
+  background:rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  z-index:500;
+  position: fixed;
+
+  img {
+    width:50px;
+  }
+}
+
+#alert-modal {
+  .modal-content {
+    @media (orientation:portrait) {
+      min-width:68vw;
+      max-width:75vw;
+    }
+    @media (min-width:$width-tablet) {
+      min-width:40vw;
+      max-width:50vw;
+    }
+  }
+
+  .modal-body {
+    font-size:10.5pt;
+    color:$color-alert-msg;
+    text-align: center;
+    overflow-wrap:break-word;
+
+    p {
+      margin:0;
+      white-space:pre-line;
+    }
+  }
+
+  .modal-footer {
+    color:$color-header;
+    font-size:14pt;
+    padding:10px 0;
+
+    p {
+      margin:0;
+    }
+  }
+}
+
+.modal-open .modal {
+  overflow-y:hidden;
+}
+
+.modal.fade .modal-dialog {
+  transform:translate(0, -5%);
+}
+
+.modal.show .modal-dialog {
+  transform:translate(0, 0);
+}
+
+#header {
+
+  background-color: $color-header;
+  color: $color-header-text;
+  height:44px;
+
+  p {
+    font-family: "Open-Sans-Bold";
+    font-size:9pt;
+    letter-spacing:1pt;
+    margin:0;
+    text-weight:bold;
+  }
+
+  #search_menu {
+    @include image_res("btnSearch@2x.png", 18px, 18px);
+  }
+
+  #drawer_menu {
+    @include image_res("btnMenu@2x.png", 24px, 24px);
+  }
+
+  #back_button {
+    @include image_res("btnBack@2x.png", 18px, 18px);
+  }
+
+  #cart_menu {
+    @include image_res("btnCart@2x.png", 18px, 18px);
+  }
+
+  #share_menu {
+    @include image_res("btnShare@2x.png", 18px, 18px);
+  }
+
+  #favorite_menu {
+    @include image_res("btnStarOn@2x.png", 18px, 18px);
+  }
+}

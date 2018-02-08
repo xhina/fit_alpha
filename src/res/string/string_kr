@@ -1,0 +1,44 @@
+alert_email_not_correct = 이메일 형식이 아닙니다\n정확한 이메일 주소를 입력하세요.
+alert_password_correct = 비밀번호가\n일치하지 않습니다.
+alert_not_member = 가입되지 않은 계정입니다.
+alert_password_sending_mail = 입력하신 메일 주소로\n비밀번호 메일이 발송되었습니다.
+alert_password_limit = 비밀번호는 4자~12자 사이에 입력해야 합니다.
+alert_name_limit = 이름은 2자~16자\n사이에 입력해야 합니다.
+alert_already_join = 이미 가입된 계정입니다.
+alert_password_change_complete = 비밀번호가 수정되었습니다.
+
+header_title_email_login = 이메일 로그인
+header_title_email_join = 이메일 가입
+header_title_password_search = 비밀번호 찾기
+header_title_password_change = 비밀번호 수정
+
+ui_start_email = 이메일로 시작하기
+ui_start_kakao = 카카오톡으로 시작하기
+ui_start_fb = 페이스북으로 시작하기
+ui_password_search = 비밀번호 찾기
+ui_join = 회원가입
+ui_login = 로그인
+ui_name = 이름
+ui_password = 비밀번호
+ui_password_re = 비밀번호 확인
+ui_email = 이메일
+ui_send = 보내기
+ui_modify = 수정하기
+ui_send_notice_msg = 가입하신 이메일을 입력해주세요.\n해당 주소로 비밀번호 메일이 발송됩니다.
+ui_policy_msg_0 = 가입과 동시에
+ui_policy_msg_1 = 이용약관
+ui_policy_msg_2 = 및
+ui_policy_msg_3 = 개인정보보호정책
+ui_policy_msg_4 = 에\n 동의하신 것으로 간주됩니다.
+
+placeholder_input_email = 이메일을 입력하세요.
+placeholder_input_pw = 비밀번호를 입력하세요.
+placeholder_input_pw_info = 비밀번호를 입력하세요. (최소 4자~12자)
+placeholder_input_pw_re = 비밀번호를 한번 더 입력하세요.
+placeholder_input_name = 이름을 입력하세요.
+
+error_account_api = 요청에 실패하였습니다.\n잠시후에 다시 시도해주세요.
+error-200001 = 이미 가입된 계정입니다.
+error-200010 = 가입되지 않은 계정입니다.
+error-200110 = 시간이 경과하여\n해당 페이지가 만료되었습니다.\n다시 시도해주세요.
+error-200011 = 가입되어 있지 않거나 올바르지 않은 정보입니다.

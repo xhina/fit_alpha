@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("../res/font/Open-Sans/OpenSans-Regular.ttf"); }
+@font-face {
+  font-family: 'Open-Sans-Bold';
+  src: url("../res/font/Open-Sans/OpenSans-Bold.ttf"); }
+@font-face {
+  font-family: 'Open-Sans-Semibold';
+  src: url("../res/font/Open-Sans/OpenSans-Semibold.ttf"); }
+@font-face {
+  font-family: 'Open-Sans-Light';
+  src: url("../res/font/Open-Sans/OpenSans-Light.ttf"); }
+
+/*# sourceMappingURL=global_mixin.css.map */

@@ -1,0 +1,40 @@
+$font-family: "Open-Sans", "Open-Sans-Bold", sans-serif;
+$color-body-bg:rgb(242,242,242);
+$color-header:white;
+$color-header-text:black;
+$color-page-bg:white;
+$color-greyish-brown:rgb(74,74,74);
+$color-warm-grey:rgb(161,136,127);
+$color-alert-msg:rgb(3,3,3);
+
+$width-ip5:320px;
+$width-tablet:700px;
+$height-ip8p:736px;
+
+@mixin image_res($filename, $w, $h) {
+  width:$w;
+  height:$h;
+  background-image:url("../res/img/" + $filename);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family:'Open-Sans';
+  src: url("../res/font/Open-Sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family:'Open-Sans-Bold';
+  src: url("../res/font/Open-Sans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family:'Open-Sans-Semibold';
+  src: url("../res/font/Open-Sans/OpenSans-Semibold.ttf");
+}
+
+@font-face {
+  font-family:'Open-Sans-Light';
+  src: url("../res/font/Open-Sans/OpenSans-Light.ttf");
+}

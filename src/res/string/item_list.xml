@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <item_list>
+  <man>
+    <item>
+      <id>1999</id>
+      <type>Shoes</type>
+      <gender>Male</gender>
+      <brand>Gucci</brand>
+      <name>Spike Shoes</name>
+      <pricemoney>1200</pricemoney>
+      <pricegem>120</pricegem>
+      <description>Gucci 56 Looks Shoes</description>
+      <small_iamge>Icon_Gucci_Shoes_Look56Shoes.png</small_iamge>
+      <large_iamge>Icon_L_Gucci_Shoes_Look56Shoes.png</large_iamge>
+    </item>
+
+    <item>
+      <id>2001</id>
+      <type>Top</type>
+      <gender>Male</gender>
+      <brand>Gucci</brand>
+      <name>Striped polo</name>
+      <pricemoney>1250</pricemoney>
+      <pricegem>125</pricegem>
+      <description>he oversize, elongated shape of this shirt is reminiscent of a rugby shirt in wide stripes. "Thanatos," a figure from Greek mythology, is embroidered across the back.</description>
+      <small_iamge>Icon_Gucci_Top_Look56Shirt.png</small_iamge>
+      <large_iamge>Icon_L_Gucci_Top_Look56Shirt.png</large_iamge>
+    </item>
+
+    <item>
+      <id>2002</id>
+      <type>Bottom</type>
+      <gender>Male</gender>
+      <brand>Gucci</brand>
+      <name>Acetate jogging pant</name>
+      <pricemoney>990</pricemoney>
+      <pricegem>99</pricegem>
+      <description>Ankle length pants in shiny acetate with the Gucci jacquard stripe trim along the sides. The activewear collection is enhanced in new fabrics and colors. The relaxed feel of the jogging pant mixes with tailored pieces.</description>
+      <small_iamge>Icon_Gucci_Bottom_Look56Pants.png</small_iamge>
+      <large_iamge>Icon_L_Gucci_Bottom_Look56Pants.png</large_iamge>
+    </item>
+
+    <item>
+      <id>2004</id>
+      <type>Outer</type>
+      <gender>Male</gender>
+      <brand>Gucci</brand>
+      <name>Cambridge felt jacket</name>
+      <pricemoney>2900</pricemoney>
+      <pricegem>290</pricegem>
+      <description>A straight-fit deconstructed jacket in raw cut felt with a velvet collar. At the chest is an embroidered crest appliqué featuring a bee and laurel wreath against a red background.</description>
+      <small_iamge>Icon_Gucci_Outer_Look56Outer.png</small_iamge>
+      <large_iamge>Icon_L_Gucci_Outer_Look56Outer.png</large_iamge>
+    </item>
+  </man>
+
+  <woman>
+    <item>
+      <id>1011</id>
+      <type>Top</type>
+      <gender>Female</gender>
+      <brand>No Brand</brand>
+      <name>Unknown T-Shirt</name>
+      <pricemoney>50</pricemoney>
+      <pricegem>5</pricegem>
+      <description>Unknown Brand T-Shirt</description>
+      <small_iamge>Icon_NoBrand_BasicTop.png</small_iamge>
+      <large_iamge>Icon_L_NoBrand_BasicTop.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1012</id>
+      <type>Top</type>
+      <gender>Female</gender>
+      <brand>Calvin Klein</brand>
+      <name>Western Shirt</name>
+      <pricemoney>500</pricemoney>
+      <pricegem>50</pricegem>
+      <description>Calvin Klein Western Shirt</description>
+      <small_iamge>Icon_CK_Top_Jean.png</small_iamge>
+      <large_iamge>Icon_L_CK_Top_Jeans.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1021</id>
+      <type>Bottom</type>
+      <gender>Female</gender>
+      <brand>Coach</brand>
+      <name>Applique Jean</name>
+      <pricemoney>800</pricemoney>
+      <pricegem>80</pricegem>
+      <description>Coach Applique Jean</description>
+      <small_iamge>Icon_Coach_Bottom_Jean.png</small_iamge>
+      <large_iamge>Icon_L_Coach_Bottom_Jeans.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1022</id>
+      <type>Bottom</type>
+      <gender>Female</gender>
+      <brand>Calvin Klein</brand>
+      <name>Western Jean</name>
+      <pricemoney>700</pricemoney>
+      <pricegem>70</pricegem>
+      <description>Calvin Klein Western Jean</description>
+      <small_iamge>Icon_CK_Bottom_Jean.png</small_iamge>
+      <large_iamge>Icon_L_CK_Bottom_Jeans.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1031</id>
+      <type>Shoes</type>
+      <gender>Female</gender>
+      <brand>Louis Vuitton</brand>
+      <name>UPSTAGE ANKLE BOOTS</name>
+      <pricemoney>1270</pricemoney>
+      <pricegem>127</pricegem>
+      <description>This stylish ankle boot is embellished with Monogram flower quilting on the back and on the comfortable block heel.</description>
+      <small_iamge>Icon_LV_LeatherBoots.png</small_iamge>
+      <large_iamge>Icon_L_LV_Boots_Leather.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1032</id>
+      <type>Shoes</type>
+      <gender>Female</gender>
+      <brand>Gucci</brand>
+      <name>Logo Black Shoes</name>
+      <pricemoney>790</pricemoney>
+      <pricegem>79</pricegem>
+      <description>The Marmont patent leather mid-heel pump with patent covered Double G hardware on fold over fringe. The Double G is now synonymous with Alessandro Michele's collections.</description>
+      <small_iamge>Icon_Gucci_blacklogo.png</small_iamge>
+      <large_iamge>Icon_L_Gucci_Logoblack_Shoe.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1041</id>
+      <type>Onepiece</type>
+      <gender>Female</gender>
+      <brand>Saint Laurent</brand>
+      <name>Saint Laurent Deep V-neck fil coupé silk-blend mini dress</name>
+      <pricemoney>3290</pricemoney>
+      <pricegem>329</pricegem>
+      <description>Saint Laurent's glistening jewel-tone fil coupé mini dress is a stunning take on a 1980s silhouette. Cut from black lightweight silk-blend chiffon, it's shaped with puffed shoulders and a deep V-neckline that slim and elongate the body, while gathers above and below the waist create a sense of relaxed ease. Complete the look for cocktail hour with a quilted clutch and slender stilettos.</description>
+      <small_iamge>Icon_YSL_Onepiece_DeepVNeckMiniDress.png</small_iamge>
+      <large_iamge>Icon_L_YSL_Onepiece_DeepVNeckMiniDress.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1042</id>
+      <type>Onepiece</type>
+      <gender>Female</gender>
+      <brand>Loewe</brand>
+      <name>X Paula’s Ibiza bird-print maxi dress</name>
+      <pricemoney>1990</pricemoney>
+      <pricegem>199</pricegem>
+      <description>Loewe's yellow-orange bird-print maxi dress is imbued with the free-spirited aesthetic of Ibiza, where legendary Paula's was based. It's part of a new capsule collection designed with the help of the boutique's co-founder, Armin Heinemann, and has a racer-style silhouette that's beautifully draped beneath a dark moss-green knitted halter top layer. Wear it with your highest heels to let the asymmetric hemline pool at your feet.</description>
+      <small_iamge>Icon_Loewe_Onepiece_XIbizaBridMaxiDress.png</small_iamge>
+      <large_iamge>Icon_L_Loewe_Onepiece_XIbizaBridMaxiDress.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1061</id>
+      <type>Outer</type>
+      <gender>Female</gender>
+      <brand>Coach</brand>
+      <name>Pieced Shearling Bomber Jacket</name>
+      <pricemoney>2100</pricemoney>
+      <pricegem>210</pricegem>
+      <description>A luxe take on the traditional U.S. Air Force staple, this bomber is crafted of plush shearling with tipped ends, giving it unique dimension and character. The jacket is finished with leather details and an oversized ring and tassel zipper pull.</description>
+      <small_iamge>Icon_Coach_Outer_Furjacket.png</small_iamge>
+      <large_iamge>Icon_L_Coach_Outer_Furjacket.png</large_iamge>
+    </item>
+
+    <item>
+      <id>1062</id>
+      <type>Outer</type>
+      <gender>Female</gender>
+      <brand>Balenciaga</brand>
+      <name>SWING PUFFER JACKET</name>
+      <pricemoney>4205</pricemoney>
+      <pricegem>420</pricegem>
+      <description>Balenciaga combines Parisian refinement with a streetwear edge to create directional silhouettes that are coveted by the sartorial crowd the world over. The hyper athletic vibes of current day Balenciaga is at its peak with this red feather down Swing padded jacket. The outlandish piece features a hood, a rear logo stamp, an oversized fit, a wrapped scarf neckline, a quilted finish, snap button pockets, a chain detail on the neck and a double zipper closure.</description>
+      <small_iamge>Icon_Balenciaga_Overshell.png</small_iamge>
+      <large_iamge>Icon_L_Balenciaga_Overshell.png</large_iamge>
+    </item>
+  </woman>
+ </item_list>
+</data>

@@ -1,0 +1,145 @@
+@import 'global_mixin';
+
+$color-lightgray:rgb(238, 238, 238);
+
+#item-detail {
+
+  .pre-scrollable {
+    height:calc(100vh - 45px);
+  }
+
+  #container1 {
+    width:92vw;
+  }
+
+  #img_container {
+    background-color: $color-lightgray;
+
+    #item-img {
+      width:100vw;
+      height:375px;
+      background-size:contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  nav {
+    margin-top:-17px;
+
+    #pagination {
+      width:52px;
+      height:6px;
+      padding:0;
+    }
+  }
+
+  #info {
+    display:flex;
+    justify-content: space-between;
+    margin-top:-13px;
+    border-bottom:1px solid $color-lightgray;
+
+    img:nth-child(1) {
+      width:17px;
+      height:18px;
+    }
+
+    img:nth-child(2) {
+      width:17px;
+      height:18px;
+    }
+
+    div {
+      display:flex;
+    }
+
+    div p {
+      font-size:7pt;
+      letter-spacing: 1pt;
+      margin:2px 0 10px 5px;
+    }
+
+    div:nth-child(3) p {
+      font-family: Open-Sans-Bold;
+      font-size:9pt;
+    }
+  }
+
+  #item_desc {
+    margin-top:20px;
+
+    h6 {
+      font-family: Open-Sans-Bold;
+      font-size:13pt;
+      letter-spacing: 1pt;
+      padding-bottom:20px;
+      border-bottom:1px solid $color-lightgray;
+    }
+
+    #desc {
+      color:rgb(74,74,74);
+      font-size:9pt;
+      margin-top:18px;
+    }
+
+    #tag {
+      font-family: Open-Sans-Light;
+      color:rgba(124,124,124, .7);
+      font-size:8pt;
+      margin-top:-3px;
+    }
+  }
+
+  .fit-btn {
+    border:2px solid black;
+    font-size:8.5pt;
+    font-family: Open-Sans-Bold;
+    background-color: white;
+    letter-spacing: 1pt;
+  }
+
+  footer  {
+    width:100%;
+    text-align: center;
+
+    #buy-btn-container {
+      margin-bottom: 19px;
+    }
+
+    .buy-btn {
+      width:155px;
+      height:48px;
+      margin:0 2pt;
+
+      img {
+        width:18px;
+        height:18px;
+        margin-right:8px;
+      }
+    }
+
+    #like-it-friends {
+      width:315px;
+      height:90px;
+      margin-bottom:5px;
+    }
+  }
+
+  #fixed_footer {
+    position:sticky;
+    -webkit-transform: translateZ(0);
+    bottom:0px;
+    width:100%;
+    background-color: white;
+    border-top:1px solid $color-lightgray;
+    text-align: center;
+
+    #basket-btn {
+      margin:10px 0;
+      width:315px;
+      height:48px;
+    }
+  }
+
+}
