@@ -61,14 +61,9 @@ export const GoBack = ()=> {
   const pageIn = HISTORY.goBack();
   const pageInRef = pageIn ? getReactRef(pageIn) : null;
 
-  if (goBackRef.isPageRenderMode()) {
-    throttleRoute();
-    goBackRef.pageBack();
-    if (pageInRef) pageInRef.pageIn();
-  }
-  else {
-    RouteBack();
-  }
+  throttleRoute();
+  goBackRef.pageBack();
+  if (pageInRef) pageInRef.pageIn();
 };
 
 export const GoBackEnable = () => HISTORY.goBackEnable();

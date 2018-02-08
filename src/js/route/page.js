@@ -28,6 +28,10 @@ export default class Page extends React.PureComponent {
     this.onTransitionFinish = this.onTransitionFinish.bind(this);
   }
 
+  componentDidMount() {
+    this.pageGo();
+  }
+
   set tweenMode(value) {
     this.tweenEnable = value;
   }
@@ -36,33 +40,20 @@ export default class Page extends React.PureComponent {
     return Navigator;
   }
 
-  isPageRenderMode() {
-    return this.renderEl ? true : false;
-  }
-
-  pageRender(view) {
-    if (view == null) {
-      return;
-    }
-    this.renderTick(view);
-    this.pageGo();
-  }
-
-  renderTick(view) {
-    this.renderEl = view;
+  renderTick() {
     this.setState({renderToggle:!this.state.renderToggle});
   }
 
   pageGo() {
     this.transitionType = "go";
     this.setState({transitionType:"go"});
-    this.tween({x:screenSize() + 30}, {x:0});
+    this.tween({x:screenSize() + 15}, {x:0});
   }
 
   pageBack() {
     this.transitionType = "back";
     this.setState({transitionType:"back"});
-    this.tween({x:0}, {x:screenSize()});
+    this.tween({x:0}, {x:screenSize() + 15});
   }
 
   pageIn() {
@@ -91,6 +82,7 @@ export default class Page extends React.PureComponent {
   onTransitionFinish() {
     inputLock = false;
     const type = this.transitionType;
+    console.log(type);
     if (type === "back" && this.props.onFinishBack != null) {
       this.props.onFinishBack();
     }
@@ -99,12 +91,12 @@ export default class Page extends React.PureComponent {
     }
   }
 
-  render() {
+  render(view) {
     let visible = this.state.transitionType === "out" ? "hidden" : "visible";
 
     return (
       <div className="page-container" ref={e=>this.container=e} style={{visibility:visible}}>
-        {this.renderEl}
+        {view}
       </div>
     );
   }

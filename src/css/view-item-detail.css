@@ -84,6 +84,10 @@
       width: 18px;
       height: 18px;
       margin-right: 8px; }
+  #item-detail footer .owned-btn {
+    width: 315px;
+    margin: 0;
+    padding: 0; }
   #item-detail footer #like-it-friends {
     width: 315px;
     height: 90px;

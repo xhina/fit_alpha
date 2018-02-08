@@ -4,44 +4,49 @@ import topImage from "../../../res/img/featuredImg@2x.jpg";
 import filter_icon from "../../../res/img/btnCategory@2x.png";
 import { TweenLite, Power4 } from 'gsap';
 import GetItemDB from '../../data/item-database';
-
-let categoryTitles = [];
-let itemList = [];
-let navMenuRef = []
+import { selectItem } from '../../redux/actions';
 
 class View extends BaseView {
 
   constructor(props) {
     super(props);
     super.tweenMode = false;
-    this.categoryGender = "woman";
-
+    this.state.itemList = [];
+    this.itemList = [];
+    this.navMenuRef = [];
+    this.categoryTitles = [];
+    this.db = GetItemDB();
     this.dataSet();
-    super.pageRender(this.view());
-    this.onCategorySelect(categoryTitles[0], 0);
 
     super.store.subscribe(()=> {
-      this.categoryGender = super.store.getState().gender;
-      this.dataSet();
-      super.renderTick(this.view());
-      this.onCategorySelect(categoryTitles[0], 0);
+      let state = super.store.getState();
+      if (state.type != "change_gender") {
+        return;
+      }
+      this.dataSet(state.gender);
+      super.renderTick();
+      this.selectDefaultMenu();
     });
   }
 
-  dataSet() {
-    this.db = GetItemDB();
-    const gender = this.categoryGender;
-    const data = this.db.getCategoryTypes(gender)
+  dataSet(gender) {
+    const data = this.db.getCategoryTypes(gender);
     this.categoryDB = data;
 
-    categoryTitles.length = 0;
+    this.categoryTitles.length = 0;
     for (let obj in data) {
-      categoryTitles.push(obj);
+      this.categoryTitles.push(obj);
     };
+  }
+
+  selectDefaultMenu() {
+    this.onCategorySelect(this.categoryTitles[0], 0);
   }
 
   componentDidMount() {
     this.setItemSectionScrollBound();
+    super.componentDidMount();
+    this.selectDefaultMenu();
   }
 
   setItemSectionScrollBound() {
@@ -50,6 +55,7 @@ class View extends BaseView {
   }
 
   onSelectItem(itemData) {
+    super.store.dispatch(selectItem(itemData));
     super.navigator.go(super.pageUID.ITEM_DETAIL);
   }
 
@@ -58,20 +64,25 @@ class View extends BaseView {
       if (t !== category) {
         continue;
       }
-      itemList = this.categoryDB[t];
+      this.itemList = this.categoryDB[t];
       break;
     }
 
-    for (let i = 0;i < navMenuRef.length;i++) {
+    this.navMenuRef[idx].selectedEffect();
+    for (let i = 0;i < this.navMenuRef.length;i++) {
       if (i == idx) continue;
-      if (navMenuRef[i] == null) continue;
-      navMenuRef[i].unSelect();
+      if (this.navMenuRef[i] == null) continue;
+      this.navMenuRef[i].unSelectedEffect();
     }
-    super.renderTick(this.view());
+    super.renderTick();
+  }
+
+  render() {
+    return super.render(this.view());
   }
 
   view() {
-    navMenuRef = [];
+    this.navMenuRef = [];
 
     return (
       <div className="page" id="item-types">
@@ -87,9 +98,9 @@ class View extends BaseView {
           <nav className="pre-scrollable">
             <ul>
               {
-                categoryTitles.map((n, idx)=>{
+                this.categoryTitles.map((n, idx)=>{
                   return <NavMenu ref={e=>{
-                    navMenuRef[idx] = e;
+                    this.navMenuRef[idx] = e;
                   }} key={idx} index={idx} title={n} onSelect={this.onCategorySelect.bind(this)} />
                 })
               }
@@ -98,7 +109,7 @@ class View extends BaseView {
           <div ref={e=>this.itemSectionContainer=e} id="item-section-container" className="pre-scrollable">
             <section id="item-section">
               {
-                itemList.map((data, idx)=>{
+                this.itemList.map((data, idx)=>{
                   return <Item onSelect={this.onSelectItem.bind(this)} key={idx} itemData={data} />
                 })
               }
@@ -117,16 +128,15 @@ class NavMenu extends React.Component {
     this.selector.style.opacity = 0;
   }
 
-  select() {
+  selectedEffect() {
     TweenLite.to(this.selector, .6, {opacity:1, ease:Power4.easeOut});
   }
 
-  unSelect() {
+  unSelectedEffect() {
     TweenLite.to(this.selector, .6, {opacity:0, ease:Power4.easeOut});
   }
 
   onSelect() {
-    this.select();
     if (this.props.onSelect != null) {
       this.props.onSelect(this.props.title, this.props.index);
     }
@@ -146,7 +156,7 @@ class NavMenu extends React.Component {
 
 class Item extends React.Component {
   onSelectItem(e) {
-    this.props.onSelect();
+    this.props.onSelect(this.props.itemData);
   }
 
   render() {
@@ -156,8 +166,8 @@ class Item extends React.Component {
       <figure className="item" onClick={this.onSelectItem.bind(this)}>
         <img id="item-thumbnail" src={process.env.PUBLIC_URL + "/res/img/Small/" + data.small_iamge} />
         <figcaption>
-          <p>{this.props.title}</p>
-          <p>COTTON POPLIN DRESS</p>
+          <p id="text0">{this.props.itemData.name}</p>
+          <p id="text1">{this.props.itemData.brand}</p>
           <div>
             <img />
             <p>100$</p>

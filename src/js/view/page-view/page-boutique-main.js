@@ -4,20 +4,19 @@ import img1 from "../../../res/img/img00@2x.jpg";
 
 class View extends BaseView {
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    super.componentDidMount();
   }
 
-  componentDidMount() {
-    super.tweenMode = false;
-    super.pageRender(this.view());
+  render() {
+    return super.render(this.view());
   }
 
   view() {
     return (
       <div className="page" id="boutique-main">
         {super.attachHeader('BOUTIQUE')}
-
+        
         <div className="pre-scrollable">
           <div id="main-bg">
             <img src={img1} style={{width:"100vw"}} />
