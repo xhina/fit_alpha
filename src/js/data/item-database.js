@@ -89,6 +89,8 @@ class Parser {
       itemObj.description = item.getElementsByTagName("description")[0].innerHTML;
       itemObj.small_iamge = item.getElementsByTagName("small_iamge")[0].innerHTML;
       itemObj.large_iamge = item.getElementsByTagName("large_iamge")[0].innerHTML;
+      itemObj.owned = item.getElementsByTagName("owned")[0].innerHTML == "true";
+
       this.db.items[itemObj.id] = itemObj;
       genderIds.push(itemObj.id);
       if (categoryIds[itemObj.type] == null) {

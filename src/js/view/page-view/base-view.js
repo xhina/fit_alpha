@@ -7,10 +7,16 @@ import Header from '../header/header';
 import { PAGE_UID } from '../page-view-manager';
 import React from 'react';
 import { getStore } from '../../redux/store';
+import { EventController } from '../../event/event-controller';
 
 export default class BaseView extends Page {
   constructor(props) {
     super(props);
+    this._eventController = new EventController();
+  }
+
+  get eventController() {
+    return this._eventController;
   }
 
   get pageUID () {

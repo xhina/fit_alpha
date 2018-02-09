@@ -82,7 +82,7 @@ export default class Page extends React.PureComponent {
   onTransitionFinish() {
     inputLock = false;
     const type = this.transitionType;
-    console.log(type);
+    
     if (type === "back" && this.props.onFinishBack != null) {
       this.props.onFinishBack();
     }

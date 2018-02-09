@@ -65,7 +65,7 @@ $color-lightgray:rgb(238, 238, 238);
   }
 
   #item-section-container {
-
+    // background-color: red;
   }
 
   #item-section {
@@ -77,12 +77,18 @@ $color-lightgray:rgb(238, 238, 238);
   }
 
   .item {
-    padding:0 11px;
+    padding:0 7px;
+
+    #thumbnailContainer {
+      background-color:$color-lightgray;
+      width:157px;
+    }
 
     #item-thumbnail {
       background-color:$color-lightgray;
-      width:165px;
-      height:200px;
+      // width:165px;
+      // height:200px;
+      width:157px;
     }
 
     #text0 {
@@ -92,7 +98,7 @@ $color-lightgray:rgb(238, 238, 238);
       line-height: 1.3;
       text-align: center;
       margin:10px 0 0 0;
-      width:165px;
+      width:157px;
       overflow:hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -104,7 +110,7 @@ $color-lightgray:rgb(238, 238, 238);
       text-align: center;
       color:rgba(0,0,0,.6);
       margin:1px 0 0 0;
-      width:165px;
+      width:157px;
       overflow:hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -114,7 +120,7 @@ $color-lightgray:rgb(238, 238, 238);
       text-align: center;
       margin-top:-4px;
 
-      img {
+      #cash_icon {
         content: url("../res/img/icoMoney@2x.png");
         width:12px;
         height:12px;

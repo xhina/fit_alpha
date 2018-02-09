@@ -5,23 +5,24 @@ import { PAGE_UID } from '../page-view-manager';
 import { connect } from 'react-redux';
 import { selectGender } from '../../redux/actions';
 import { getStore } from '../../redux/store';
+import urlParam from '../../util/parameterFromURL';
 
-const GenderType = {
-  man : "man",
-  woman : "woman"
+const GENDER_TYPE = {
+  MAN : "man",
+  WOMAN : "woman"
 }
 
 export default class View extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      category:GenderType.woman
-    }
+    this.state = {category:""};
   }
 
   componentDidMount() {
     this.drawer.style.display = "none";
+    let gender = urlParam("gender");
+    this.selectCategory(gender == "m" ? GENDER_TYPE.MAN : GENDER_TYPE.WOMAN);
     this.closeDrawerMenu();
   }
 
@@ -66,8 +67,8 @@ export default class View extends React.Component {
         <div ref={e=>this.drawer_panel=e} id="menu-panel">
           <div id="panel-bg" />
           <div id="category-menu" style={{marginTop:"36px", marginLeft:"15px"}}>
-            <h2 onClick={this.selectCategory.bind(this, GenderType.woman)} style={womanMenuStyle}>WOMAN</h2>
-            <h2 onClick={this.selectCategory.bind(this, GenderType.man)} style={manMenuStyle}>MAN</h2>
+            <h2 onClick={this.selectCategory.bind(this, GENDER_TYPE.WOMAN)} style={womanMenuStyle}>WOMAN</h2>
+            <h2 onClick={this.selectCategory.bind(this, GENDER_TYPE.MAN)} style={manMenuStyle}>MAN</h2>
           </div>
           <ul>
             <li onClick={this.gotoFeatured.bind(this)}>FEATURED<div /></li>

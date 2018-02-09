@@ -92,9 +92,9 @@ $color-lightgray:rgb(238, 238, 238);
   }
 
   .fit-btn {
+    font-family: Open-Sans-Bold;
     border:2px solid black;
     font-size:8.5pt;
-    font-family: Open-Sans-Bold;
     background-color: white;
     letter-spacing: 1pt;
   }
@@ -121,8 +121,11 @@ $color-lightgray:rgb(238, 238, 238);
 
     .owned-btn {
       width:315px;
+      height:48px;
       margin:0;
       padding:0;
+
+      color:rgb(141,141,141);
     }
 
     #like-it-friends {

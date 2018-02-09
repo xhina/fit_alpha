@@ -6,7 +6,6 @@ import likeFriendImg from "../../../res/img/img03@2x.png";
 import pagination from "../../../res/img/imgPagination@2x.png";
 import moneyIcon from "../../../res/img/icoMoney_b@2x.png";
 
-
 import { TweenLite, Power4 } from 'gsap';
 import { Container } from 'reactstrap';
 
@@ -22,6 +21,11 @@ class View extends BaseView {
   componentDidMount() {
     this.changePurchaseStatus();
     super.componentDidMount();
+    super.eventController.addUnityToolbarEvent(this.scroll);
+  }
+
+  componentWillUnmount() {
+    super.eventController.removeUnityToolbarEvent();
   }
 
   changePurchaseStatus() {
@@ -38,7 +42,7 @@ class View extends BaseView {
   }
 
   checkOwnedItem() {
-    return false;
+    return this.itemData.owned;
   }
 
   render() {
@@ -78,10 +82,10 @@ class View extends BaseView {
               <section  id="buy-btn-container">
                 <button ref={e=>this.buyBtn1=e} className="buy-btn fit-btn"><img className="buy-btn-icon" src={diamondIcon} />BUY</button>
                 <button ref={e=>this.buyBtn2=e} className="buy-btn fit-btn"><img className="buy-btn-icon" src={moneyIcon} />BUY</button>
-                <button ref={e=>this.ownedBtn=e} className="owned-btn fit-btn"><img className="buy-btn-icon" src={moneyIcon} />OWNED</button>
+                <button ref={e=>this.ownedBtn=e} className="owned-btn fit-btn">OWNED</button>
               </section>
 
-                <img id="like-it-friends" src={likeFriendImg} />
+              <img id="like-it-friends" src={likeFriendImg} />
             </Container>
           </footer>
 

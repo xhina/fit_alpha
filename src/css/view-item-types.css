@@ -61,11 +61,13 @@
   margin-top: 15px;
   width: 100%; }
 #item-types .item {
-  padding: 0 11px; }
+  padding: 0 7px; }
+  #item-types .item #thumbnailContainer {
+    background-color: #eeeeee;
+    width: 157px; }
   #item-types .item #item-thumbnail {
     background-color: #eeeeee;
-    width: 165px;
-    height: 200px; }
+    width: 157px; }
   #item-types .item #text0 {
     font-family: Open-Sans-Bold;
     font-size: 9pt;
@@ -73,7 +75,7 @@
     line-height: 1.3;
     text-align: center;
     margin: 10px 0 0 0;
-    width: 165px;
+    width: 157px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
@@ -83,14 +85,14 @@
     text-align: center;
     color: rgba(0, 0, 0, 0.6);
     margin: 1px 0 0 0;
-    width: 165px;
+    width: 157px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
   #item-types .item div {
     text-align: center;
     margin-top: -4px; }
-    #item-types .item div img {
+    #item-types .item div #cash_icon {
       content: url("../res/img/icoMoney@2x.png");
       width: 12px;
       height: 12px; }

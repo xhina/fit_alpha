@@ -1,10 +1,10 @@
-import React from 'react';
-import BaseView from './base-view';
-import topImage from "../../../res/img/featuredImg@2x.jpg";
 import filter_icon from "../../../res/img/btnCategory@2x.png";
-import { TweenLite, Power4 } from 'gsap';
+import topImage from "../../../res/img/featuredImg@2x.jpg";
 import GetItemDB from '../../data/item-database';
 import { selectItem } from '../../redux/actions';
+import BaseView from './base-view';
+import { Power4, TweenLite } from 'gsap';
+import React from 'react';
 
 class View extends BaseView {
 
@@ -14,11 +14,12 @@ class View extends BaseView {
     this.state.itemList = [];
     this.itemList = [];
     this.navMenuRef = [];
+    this.itemRef = [];
     this.categoryTitles = [];
     this.db = GetItemDB();
-    this.dataSet();
+    this.dataSet(super.store.getState().gender);
 
-    super.store.subscribe(()=> {
+    this.unsubscribe = super.store.subscribe(()=> {
       let state = super.store.getState();
       if (state.type != "change_gender") {
         return;
@@ -27,6 +28,11 @@ class View extends BaseView {
       super.renderTick();
       this.selectDefaultMenu();
     });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+    super.eventController.removeUnityToolbarEvent();
   }
 
   dataSet(gender) {
@@ -47,6 +53,7 @@ class View extends BaseView {
     this.setItemSectionScrollBound();
     super.componentDidMount();
     this.selectDefaultMenu();
+    super.eventController.addUnityToolbarEvent(this.itemSectionContainer);
   }
 
   setItemSectionScrollBound() {
@@ -74,7 +81,10 @@ class View extends BaseView {
       if (this.navMenuRef[i] == null) continue;
       this.navMenuRef[i].unSelectedEffect();
     }
+
     super.renderTick();
+
+    this.itemSectionContainer.scrollTop = 0;
   }
 
   render() {
@@ -83,6 +93,7 @@ class View extends BaseView {
 
   view() {
     this.navMenuRef = [];
+    this.itemRef = [];
 
     return (
       <div className="page" id="item-types">
@@ -110,7 +121,7 @@ class View extends BaseView {
             <section id="item-section">
               {
                 this.itemList.map((data, idx)=>{
-                  return <Item onSelect={this.onSelectItem.bind(this)} key={idx} itemData={data} />
+                  return <Item onSelect={this.onSelectItem.bind(this)} key={idx} itemData={data} ref={e=>this.itemRef.push(e)} />
                 })
               }
             </section>
@@ -155,21 +166,44 @@ class NavMenu extends React.Component {
 }
 
 class Item extends React.Component {
+
+  componentDidMount() {
+    this.thumbnail.style.opacity = 0;
+  }
+
+  shouldComponentUpdate() {
+    this.thumbnail.style.opacity = 0;
+    return true;
+  }
+
   onSelectItem(e) {
     this.props.onSelect(this.props.itemData);
   }
 
+  dispose() {
+    this.thumbnail.style.visibility = "hidden";
+  }
+
   render() {
     const data = this.props.itemData;
+    let src;
+    let img = new Image();
+    img.onload = (e) => {
+      this.thumbnail.src = e.target.src;
+      TweenLite.to(this.thumbnail, .4, {delay:.1, opacity:1});
+    }
+    img.src = process.env.PUBLIC_URL + "/res/img/Large/" + data.large_iamge;
 
     return(
       <figure className="item" onClick={this.onSelectItem.bind(this)}>
-        <img id="item-thumbnail" src={process.env.PUBLIC_URL + "/res/img/Small/" + data.small_iamge} />
+        <div id="thumbnailContainer">
+          <img ref={e=>this.thumbnail=e} id="item-thumbnail" src={img} />
+        </div>
         <figcaption>
-          <p id="text0">{this.props.itemData.name}</p>
-          <p id="text1">{this.props.itemData.brand}</p>
+          <p id="text0">{this.props.itemData.brand}</p>
+          <p id="text1">{this.props.itemData.name}</p>
           <div>
-            <img />
+            <img id="cash_icon" />
             <p>100$</p>
           </div>
         </figcaption>

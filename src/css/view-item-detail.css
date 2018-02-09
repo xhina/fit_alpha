@@ -66,9 +66,9 @@
     font-size: 8pt;
     margin-top: -3px; }
 #item-detail .fit-btn {
+  font-family: Open-Sans-Bold;
   border: 2px solid black;
   font-size: 8.5pt;
-  font-family: Open-Sans-Bold;
   background-color: white;
   letter-spacing: 1pt; }
 #item-detail footer {
@@ -86,8 +86,10 @@
       margin-right: 8px; }
   #item-detail footer .owned-btn {
     width: 315px;
+    height: 48px;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    color: #8d8d8d; }
   #item-detail footer #like-it-friends {
     width: 315px;
     height: 90px;
