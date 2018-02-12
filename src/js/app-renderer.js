@@ -56,11 +56,7 @@ class AppRenderer extends React.Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" render={() => getRenderElements()} />
-          <Route exact path="/oauth_kakao" render={() => getRenderElements()} />
-          <Route exact path="/oauth_fb" render={() => getRenderElements()} />
-          <Route exact path="/oauth_cancel_fb" render={() => getRenderElements()} />
-          <Route exact path="/pwchange" render={() => getRenderElements()} />
+          <Route path="/" render={() => getRenderElements()} />
         </div>
       </Router>
     )
